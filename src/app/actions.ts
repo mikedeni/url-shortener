@@ -15,7 +15,7 @@ export async function createShortUrl(formData: FormData) {
                 originalUrl: originalUrl,
             },
         });
-
-        redirect(`/${shortId}`);
     } catch (err) {}
+
+    redirect(`/${shortId}`);
 }

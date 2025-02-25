@@ -15,6 +15,11 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
     title: "URL Shortener",
     description: "Generated url wiht shorten for easy sharing",
+    icons: [
+        {
+            url: "/favicon.ico",
+        },
+    ],
 };
 
 export default function RootLayout({

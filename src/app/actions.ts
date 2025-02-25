@@ -8,14 +8,14 @@ export async function createShortUrl(formData: FormData) {
     const originalUrl = formData.get("originalUrl") as string;
     const shortId = nanoid(8);
 
-    try {
-        await prisma.url.create({
+    await prisma.url
+        .create({
             data: {
                 shortId: shortId,
                 originalUrl: originalUrl,
             },
-        });
-    } catch (err) {}
+        })
+        .catch(() => {});
 
     redirect(`/${shortId}`);
 }
